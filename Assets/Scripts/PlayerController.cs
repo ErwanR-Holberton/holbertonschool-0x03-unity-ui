@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
             WinLoseText.color = Color.black;
             WinLoseBG.color = Color.green;
             WinLoseBG.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
     }
     // Update is called once per frame
@@ -60,8 +61,7 @@ public class PlayerController : MonoBehaviour
             WinLoseText.color = Color.white;
             WinLoseBG.color = Color.red;
             WinLoseBG.gameObject.SetActive(true);
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
+            StartCoroutine(LoadScene(3));
         }
     }
 
@@ -73,5 +73,12 @@ public class PlayerController : MonoBehaviour
     void SetHealthText()
     {
         healthText.text = "Health: " + health.ToString();
+    }
+
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
