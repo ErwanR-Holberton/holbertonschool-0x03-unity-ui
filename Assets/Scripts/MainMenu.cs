@@ -13,11 +13,18 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         play.onClick.AddListener(PlayMaze);
+        play.onClick.AddListener(QuitMaze);
     }
 
     public void PlayMaze()
     {
         Debug.Log("yo");
         SceneManager.LoadScene("maze");
+    }
+
+    public void QuitMaze()
+    {
+        Debug.Log("Quit Game")
+        Application.Quit();
     }
 }
