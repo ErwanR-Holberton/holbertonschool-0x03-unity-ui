@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
+    public Text WinLoseText;
+    public Image WinLoseBG;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,7 +29,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Goal"))
         {
-            Debug.Log("You win!");
+            WinLoseText.text = "You Win!";
+            WinLoseText.color = Color.black;
+            WinLoseBG.color = Color.green;
+            WinLoseBG.gameObject.SetActive(true);
         }
     }
     // Update is called once per frame
