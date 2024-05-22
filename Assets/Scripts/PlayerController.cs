@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
 
     void OnTriggerEnter(Collider other)
     {
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
         {
             score += 1;
             Debug.Log("Score: " + score);
+            SetScoreText();
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Trap"))
@@ -53,5 +56,10 @@ public class PlayerController : MonoBehaviour
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
         }
+    }
+
+    void SetScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
     }
 }
