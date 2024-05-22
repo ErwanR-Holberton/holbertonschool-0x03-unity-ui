@@ -10,21 +10,20 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     public int health = 5;
     public Text scoreText;
+    public Text healthText;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pickup"))
         {
             score += 1;
-            Debug.Log("Score: " + score);
             SetScoreText();
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Trap"))
         {
-
             health -= 1;
-            Debug.Log("Health: " + health);
+            SetHealthText();
         }
         else if (other.CompareTag("Goal"))
         {
@@ -61,5 +60,10 @@ public class PlayerController : MonoBehaviour
     void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health: " + health.ToString();
     }
 }
