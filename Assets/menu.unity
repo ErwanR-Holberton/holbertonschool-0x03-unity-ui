@@ -287,7 +287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Option
 --- !u!222 &546810944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Quit
 --- !u!222 &551870367
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -701,6 +701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1716952367}
+  - component: {fileID: 1716952368}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -730,6 +731,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1716952368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716952366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd65d01f025001478a49967c601cce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  play: {fileID: 2067607602}
+  option: {fileID: 1623521202}
+  quit: {fileID: 1462323836}
 --- !u!1 &1725619211
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Play
 --- !u!222 &1725619214
 CanvasRenderer:
   m_ObjectHideFlags: 0
